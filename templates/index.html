@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Diccionario de Slang Panameño</h1>
+    <div>
+        <h2>Agregar palabra</h2>
+        <form id="add-word-form">
+            <label for="add-word">Palabra:</label>
+            <input type="text" id="add-word" name="word" required>
+            <label for="add-meaning">Significado:</label>
+            <input type="text" id="add-meaning" name="meaning" required>
+            <button type="submit">Agregar palabra</button>
+            <br><br>
+        </form>
+    </div>
+    <div>
+        <h2>Buscar significado</h2>
+        <form id="search-word-form">
+            <label for="search-word">Palabra:</label>
+            <input type="text" id="search-word" name="word" required>
+            <button type="submit">Buscar</button>
+            <br><br>
+        </form>
+        <div id="search-result"></div>
+    </div>
+    <div>
+        <h2>Lista de palabras</h2>
+        <ul id="words-list"></ul>
+        <br>
+    </div>
+    <div>
+        <h2>Eliminar palabra</h2>
+        <form id="delete-word-form">
+            <label for="delete-word">Palabra:</label>
+            <input type="text" id="delete-word" name="word" required>
+            <button type="submit">Eliminar</button>
+            <br><br>
+        </form>
+    </div>
+    <div>
+        <h2>Editar palabra</h2>
+        <form id="edit-word-form">
+            <label for="edit-word">Palabra:</label>
+            <input type="text" id="edit-word" name="word" required>
+            <label for="edit-meaning">Nuevo significado:</label>
+            <input type="text" id="edit-meaning" name="meaning" required>
+            <button type="submit">Editar</button>
+            <br><br><br>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}
+
